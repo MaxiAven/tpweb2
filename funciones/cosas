@@ -1,0 +1,45 @@
+
+ if($vuelta == "")
+{
+
+	$f=$ida;
+	$fida=convertir_fecha($f);
+	$dia = dia_de_la_semana($fida);
+
+   // echo "<p>".$dia."</p>";
+
+	busco($origen,$destino,$dia,$clase);
+}
+	else{
+
+		$f = $ida;
+		$fida = convertir_fecha($f);
+		$dia = dia_de_la_semana($fida);
+
+	 // echo "<p>".$dia."</p>";
+
+		$f2 = $vuelta;
+		$fvuelta = convertir_fecha($f2);
+		$dia2 = dia_de_la_semana($fvuelta);
+
+	//	echo "<p>".$dia2."</p>";
+
+		$sql = "SELECT a1.ciudad AS origen,a2.ciudad AS destino,lv.hora,lv.precioEcono,lv.precioPrimera
+		FROM listaVuelos lv JOIN
+		aeropuerto a1 on lv.cod_aero_origen = a1.cod_aeropuerto JOIN
+		aeropuerto a2 on lv.cod_aero_destino = a2.cod_aeropuerto
+		WHERE a1.nombre like '%$origen%'
+		AND a2.nombre like '%$destino%'
+		AND lv.diasVuelo like '$dia'
+		AND lv.diasVuelo like '$dia2'";
+
+		$query = mysql_query($sql);
+
+		while ($row = mysql_fetch_assoc($query)){
+
+		echo $row['origen'];
+		echo $row['destino'];
+		echo $row['hora'];
+	}
+		
+}

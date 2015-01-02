@@ -1,0 +1,49 @@
+.contenido-checkin{
+
+	width: 680px;
+	height: auto;
+	margin: 0 auto;
+	background: #fff;
+}
+
+.buscador-checkin{
+
+	width: 680px;
+	height: 600px;
+	margin: 0 auto;
+}
+
+#butacas{
+
+	width: 100%;
+	height: 650px;
+	margin-top: 20px;
+
+}
+
+#reservar{
+
+	margin-left: 80px;
+	height: 25px;
+	width: 80px;
+	background: #ff6600;
+	color:#fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: none;
+		
+}
+
+
+#posiciones input{
+
+margin-left: 5px;
+
+}
+
+#posiciones{
+
+	display: inline-block;
+	margin-left: 80px;
+
+}
